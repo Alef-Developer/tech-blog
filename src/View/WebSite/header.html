@@ -1,0 +1,56 @@
+<header id="Header" class="py-3 mb-3 border-bottom">
+  <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 1fr 1fr;"> 
+
+    <!-- Dropdown de Categorias -->
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center link-body-emphasis fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Bootstrap menu">
+        Categorias de Artigos
+      </a>
+      <ul class="dropdown-menu text-small shadow"> 
+        {% if articles %}
+          {% for category in articles|column('category') %}
+            <li><a class="dropdown-item active text-primary fw-bold bg-primary-subtle" href="{{ url('/ViewArticlesByCategory/' ~ (category|url_encode)) }}" aria-current="page">{{ category }}</a></li>
+          {% endfor %}
+        {% else %}
+          <li><a class="dropdown-item disabled">Sem Artigos, sem Categorias</a></li> 
+        {% endif %}
+      </ul>
+    </div>
+
+    <!-- Texto Centralizado -->
+    <a href="{{ url() }}" class="text-center mb-0 fs-1 fw-bold text-black">{{ constant('WEBSITE') }}</a>
+
+    <!-- Barra de Pesquisa e Perfil -->
+    <div class="d-flex align-items-center justify-content-end">
+      <form class="w-100 me-3" role="search" method="get" action="{{ url('/ViewArticlesByTitle') }}">
+        <input type="search" class="form-control" placeholder="Busque pelo artigo pondo seu título aqui. Ex: PHP" aria-label="Search" name="Title">
+      </form>
+      <div class="flex-shrink-0 dropdown">
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle {% if ADM %} text-info {% endif %}" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+          </svg>
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          {% if ADM %}
+          <li><a class="dropdown-item text-danger fw-bold bg-danger-subtle" href="{{ url('/Adm/Logout') }}">Logout - Sair</a></li>
+          {% else %}
+          <li><a class="dropdown-item text-primary fw-bold bg-primary-subtle" href="{{ url('/Adm/Login') }}">Login - Acesso Administrativo</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    {% if ADM %}
+    <a class="icon-link text-dark link-underline-dark" href="{{ url('/Adm/CreateArticle') }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
+        <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5z"/>
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+      </svg>
+      Adicionar Categoria
+    </a>
+    {% endif %}
+
+  </div>
+</header>

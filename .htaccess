@@ -1,0 +1,20 @@
+# Remove a listagem das pastas e arquivos no navegador. com o "+" a frente de "indexes" serve para ativar ou manter a listagem.
+
+Options -indexes
+
+# Ativa o módulo de reescrita. Ele já vem ativado por padrão no xampp. A reescrita é importante para tornar as URL's amigáveis.
+
+RewriteEngine on
+
+# Condiciona as URL's.
+
+# arquivo
+RewriteCond %{SCRIPT_FILENAME} !-f
+# diretório
+RewriteCond %{SCRIPT_FILENAME} !-d
+# link simbólico
+RewriteCond %{SCRIPT_FILENAME} !-l 
+
+# Verifica todas condições acima através da expressão regular(Regex) antes de armazenar as requisições na variável "$1" em index.php.
+
+RewriteRule ^(.*)$ index.php/$1

@@ -1,0 +1,7 @@
+{
+    "title": "HTML",
+    "content": "HTML (HyperText Markup Language, ou Linguagem de Marcação de Hipertexto) é a linguagem padrão usada para construir e estruturar o conteúdo das páginas na web. Nele é definido a estrutura básica de um site — onde ficam os títulos, parágrafos, imagens, botões, links e listas. O HTML é uma linguagem de marcação. Ele apenas organiza o conteúdo, sem executar lógica ou cálculos.",
+    "publication_date": "03/10/2026",
+    "category": "Linguagem de Marcação",
+    "image": "http://localhost/Projetos_Estudos/Portfólio/tech-blog\\src/View/WebSite/articleImages/image_6ac116ff40795.jpg"
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block Base %}
+
+{% if article %}
+
+<div class="row mb-2">
+
+{% for id, art in article %}
+
+ <div class="col-md-6">
+
+{% if ADM %}
+<div class="btn-group" role="group" aria-label="Basic example">
+    <a href="{{ url('/Adm/EditArticle/' ~ id) }}" class="btn btn-outline-info">Editar</a>
+    <a href="{{ url('/Adm/DeleteArticle/' ~ id) }}" class="btn btn-outline-danger">Apagar</a>
+</div>
+{% endif %}
+
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light"> <div class="col p-4 d-flex flex-column position-static"> <strong class="d-inline-block mb-2 text-primary-emphasis">{{ art.category }}</strong> <h3 class="mb-0">
+{{ art.title }}
+</h3> <div class="mb-1 text-body-secondary">{{ art.publication_date }}</div> <p class="card-text mb-auto">{{ art.content | slice(0, 100) }} ...</p> <a href="{{ url('/ViewArticle/' ~ id) }}" class="icon-link gap-1 icon-link-hover stretched-link">
+Continue lendo
+<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> </div> 
+<div class="col-auto d-none d-lg-block">
+{% if art.image %}
+<img src="{{ art.image }}" class="bd-placeholder-img" width="200" height="250" style="object-fit: cover;" alt="Thumbnail">
+{% else %}
+<svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+{% endif %}
+</div> </div> </div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+<p class="text-center fw-bold text-uppercase">Nenhum Artigo foi publicado</p>
+{% endif %}
+
+{% endblock Base %}

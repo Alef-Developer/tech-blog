@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block Base %}
+<form action="{% if article %} {{ url('/Adm/EditArticle/' ~ id_article) }} {% else %} {{ url('/Adm/CreateArticle') }} {% endif %}" method="POST" enctype="multipart/form-data">
+  
+  <!-- Campo Título -->
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Título</label>
+    <input type="text" class="form-control" id="titulo" name="title" {% if article %} value="{{ article.title }}" {% endif %} placeholder="Digite o título..." required>
+  </div>
+
+  <!-- Campo Categoria -->
+    <div class="mb-3">
+    <label for="categoriaInput" class="form-label">Categoria</label>
+    <input 
+        class="form-control" 
+        list="datalistCategorias" 
+        id="categoriaInput" 
+        placeholder="Digite uma nova categoria ou selecione uma existente."
+        name="category"
+        {% if article %} value="{{ article.category }}" {% endif %}
+        required
+    >
+    <datalist id="datalistCategorias">
+        {% for art in articles %}
+        <option value="{{ art.category }}">
+        {% endfor %}
+    </datalist>
+    </div>
+
+  <!-- Campo Conteúdo -->
+  <div class="mb-3">
+    <label for="conteudo" class="form-label">Conteúdo</label>
+    <textarea class="form-control" id="conteudo" name="content" rows="5" placeholder="Escreva o conteúdo aqui..." required>{% if article %} {{ article.content }} {% endif %}</textarea>
+  </div>
+
+  <!-- Campo Arquivo (Imagem) -->
+  <div class="mb-3">
+    <label for="imagem" class="form-label">Imagem de Capa</label>
+    <input class="form-control" type="file" id="imagem" name="userimage" accept="image/*">
+    <div class="form-text">Envie arquivos no formato PNG, JPG ou WEBP.</div>
+  </div>
+
+  <!-- Botão de Envio -->
+  <button type="submit" class="btn btn-primary">Publicar Artigo</button>
+
+</form>
+{% endblock %}
