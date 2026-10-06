@@ -33,7 +33,7 @@ class Article
     {
         $this->title = $title;
         $this->content = $content;
-        $this->category = $category;
+        $this->category = $category ?: "Sem Categoria";
         $this->publication_date = (new DateTime(timezone: new DateTimeZone('America/Recife')))->format('d/m/Y');
 
         if (isset($image)) {

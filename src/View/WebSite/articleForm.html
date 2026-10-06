@@ -18,7 +18,6 @@
         placeholder="Digite uma nova categoria ou selecione uma existente."
         name="category"
         {% if article %} value="{{ article.category }}" {% endif %}
-        required
     >
     <datalist id="datalistCategorias">
         {% for art in articles %}

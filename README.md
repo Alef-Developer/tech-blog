@@ -33,5 +33,5 @@ Considerando o caráter didático e de aprendizado deste sistema, a autenticaç�
 ## Uso
 
  - Navegue pelo site seja visualizando ou buscando artigos por título(na barra de pesquisa) ou categoria.
- - Se quiser adicionar, atualizar, ou apagar algum artigo. Faça login acessando o link clicando no ícone de pessoa, e acesse utilizando as seguintes credenciais: e-mail: adm@gmail.com, senha: adm123.
- - Artigos são armazenados em src/Model e suas imagens respectivas imagens em src/View/WebSite/articleImages
+ - Se quiser adicionar, atualizar, ou apagar algum artigo. Faça login acessando o link http://localhost/tech-blog/Adm/Login (Ou outro caminho a depender do diretório e ambiente no qual o projeto foi clonado), em seguida utilize as seguintes credenciais: e-mail: adm@gmail.com, senha: adm123.
+ - Artigos são armazenados em src/Model, e suas respectivas imagens em src/View/WebSite/articleImages
