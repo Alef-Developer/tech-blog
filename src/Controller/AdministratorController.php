@@ -45,6 +45,7 @@ class AdministratorController extends TemplateController
             $new_article->title = $_POST['title'];
             $new_article->content = $_POST['content'];
             $new_article->category = $_POST['category'];
+            $new_article->update_date = date('Y-m-d H:i');
 
             if ($_FILES && str_contains($_FILES['userimage']['type'], 'image')) {
 

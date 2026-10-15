@@ -18,7 +18,7 @@
 
 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light"> <div class="col p-4 d-flex flex-column position-static"> <strong class="d-inline-block mb-2 text-primary-emphasis">{{ article.category }}</strong> <h3 class="mb-0">
 {{ article.title }}
-</h3> <div class="mb-1 text-body-secondary">{{ article.publication_date }}</div> <p class="card-text mb-auto">{{ article.content | slice(0, 100) }} ...</p> <a href="{{ url('/ViewArticle/' ~ loop.index0) }}" class="icon-link gap-1 icon-link-hover stretched-link">
+</h3> <div class="mb-1 text-body-secondary">{{ article.publication_date|date('d/m/Y') }}</div> <p class="card-text mb-auto">{{ article.content | slice(0, 100) }} ...</p> <a href="{{ url('/ViewArticle/' ~ loop.index0) }}" class="icon-link gap-1 icon-link-hover stretched-link">
 Continue lendo
 <svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> </div> 
 <div class="col-auto d-none d-lg-block">

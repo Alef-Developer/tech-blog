@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Recife');
+
 // Obtém o caminho completo até o diretório raiz do projeto
 $url_normalization = function(){
     $url = str_replace('\\', '/', __DIR__);

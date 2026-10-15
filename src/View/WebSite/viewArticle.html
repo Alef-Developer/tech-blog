@@ -27,8 +27,16 @@
           <span>•</span>
         </div>
         <div class="col-auto">
-          <h6><strong>Publicado em:</strong> {{ article.publication_date }}</h6>
+          <h6><strong>Publicado em:</strong> {{ article.publication_date|date('d/m/Y H:i') }}</h6>
         </div>
+        {% if article.update_date %}
+        <div class="col-auto">
+          <span>•</span>
+        </div>
+        <div class="col-auto">
+          <h6><strong>Atualizado em:</strong> {{ article.update_date|date('d/m/Y H:i') }}</h6>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>

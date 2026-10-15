@@ -1,7 +1,8 @@
 {
-    "title": "PHP - HyperText Pre-Processor",
-    "content": "  PHP é uma linguagem de programação server-side que é responsável por tornar as páginas web dinâmicas através da geração do html no servidor",
-    "publication_date": "29/09/2026",
+    "title": "PHP: Hypertext Preprocessor",
+    "content": " O PHP é uma linguagem back-end (server-side) que torna as páginas web dinâmicas através do processamento de dados e scripts no servidor, enviando o resultado em HTML para o navegador. ",
+    "publication_date": "2026-10-15 14:19",
     "category": "Linguagem de Programação",
-    "image": "http://localhost/Projetos_Estudos/Portfólio/tech-blog\\src/View/WebSite/articleImages/image_6abc53b5473fd.jpg"
+    "image": "http://localhost/Projetos_Estudos/Portfólio/tech-blog\\src/View/WebSite/articleImages/image_6ad10b17e6dc4.jpg",
+    "update_date": "2026-10-15 14:42"
 }

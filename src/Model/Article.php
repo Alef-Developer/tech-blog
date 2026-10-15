@@ -2,9 +2,6 @@
 
 namespace TechBlog\Model;
 
-use DateTime;
-use DateTimeZone;
-
 use TechBlog\Helpers;
 
 /**
@@ -15,7 +12,7 @@ class Article
 
     public string $title, $content, $publication_date, $category;
 
-    public string|null $image;
+    public string|null $image, $update_date = null;
 
     /**
      * @var array $data Nomes dos arquivos json encontrados neste diretório
@@ -34,7 +31,7 @@ class Article
         $this->title = $title;
         $this->content = $content;
         $this->category = $category ?: "Sem Categoria";
-        $this->publication_date = (new DateTime(timezone: new DateTimeZone('America/Recife')))->format('d/m/Y');
+        $this->publication_date = date('Y-m-d H:i');
 
         if (isset($image)) {
 
@@ -101,7 +98,7 @@ class Article
     /**
      * Pegador de Artigos
      * 
-     * Recebe o conteúdo dos arquivos json e os convertendo-os para objeto.
+     * Recebe o conteúdo dos arquivos json e convertendo-os para objeto.
      * 
      * @return array|null
      */

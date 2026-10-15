@@ -4,6 +4,8 @@ Sistema para postagem de artigos sobre tecnologia feito em PHP, utilizando Progr
 
 Este projeto foi desenvolvido com foco prático em aprendizado e tem como inspiração o desafio [Personal Blog do roadmap.sh](https://roadmap.sh/projects/personal-blog).
 
+<img src="images/image.png" alt="Interface do Tech Blog">
+
 ## 🚀 Tecnologias e Ferramentas Utilizadas
 
 * **PHP Puro:** Arquitetura baseada em Programação Orientada a Objetos.
